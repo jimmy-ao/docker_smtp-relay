@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 env:
-  AWS_REGION: ${{ vars.AWS_ACCESS_KEY_ID }}
+  AWS_REGION: ${{ vars.AWS_REGION }}
   AWS_ACCOUNT_ID: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   ECR_REPOSITORY: ${{ vars.AWS_ECR_REPOSITORY }}
 
