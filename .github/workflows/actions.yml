@@ -48,4 +48,4 @@ jobs:
           platforms: linux/arm64
           push: true
           tags: |
-            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}/smtp-relay:latest
+            ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:latest
