@@ -35,7 +35,7 @@ recipient_delimiter = +
 inet_interfaces = all
 inet_protocols = all
 
-relayhost = [smtp-relay.brevo.com]:587
+relayhost = [mail.smtp2go.com]:587
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 smtp_sasl_security_options = noanonymous
