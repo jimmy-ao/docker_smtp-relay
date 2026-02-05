@@ -12,8 +12,8 @@ log() {
 log "Copying credential informations in file"
 
 # Append configuration with smtp token
-username=$(echo ${applications_smtp_key} | jq ".username" | tr -d '"')
-key=$(echo ${applications_smtp_key} | jq ".key" | tr -d '"')
+username=$(echo ${smtp_creds} | jq ".username" | tr -d '"')
+key=$(echo ${smtp_creds} | jq ".key" | tr -d '"')
 echo $'\t'$username':'$key >> $config_file
 
 log "Reloading postfix credentials configuration"
