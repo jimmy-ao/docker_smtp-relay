@@ -14,6 +14,8 @@ RUN mkdir -p /scripts
 COPY ./scripts/entrypoint.sh /scripts/
 RUN chmod +x /scripts/entrypoint.sh
 
+ENTRYPOINT [ "/scripts/entrypoint.sh" ]
+
 # Install and configure Postfix
 RUN yum install -y postfix mailx
 COPY /sources/main.cf /etc/postfix/
