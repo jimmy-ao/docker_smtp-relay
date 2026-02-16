@@ -17,7 +17,7 @@ RUN chmod +x /scripts/entrypoint.sh
 ENTRYPOINT [ "/scripts/entrypoint.sh" ]
 
 # Install and configure Postfix
-RUN yum install -y postfix mailx
+RUN yum install -y postfix cyrus-sasl-plain mailx
 COPY /sources/main.cf /etc/postfix/
 COPY /sources/sasl_passwd /etc/postfix/
 COPY sources/sender_canonical /etc/postfix
