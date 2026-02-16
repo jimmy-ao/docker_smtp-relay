@@ -35,10 +35,10 @@ recipient_delimiter = +
 inet_interfaces = all
 inet_protocols = all
 
-relayhost = [mail.smtp2go.com]:2525
+relayhost = [email-smtp.eu-north-1.amazonaws.com]:587
 relay_destination_concurrency_limit = 20
 smtp_sasl_auth_enable = yes
-smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_password_maps = static:user:password
 smtp_sasl_security_options = noanonymous
 smtp_tls_security_level = encrypt
 header_size_limit = 4096000
