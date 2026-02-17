@@ -18,17 +18,8 @@ ENTRYPOINT [ "/scripts/entrypoint.sh" ]
 
 # Install and configure Postfix
 RUN yum install -y postfix cyrus-sasl-plain mailx
-COPY /sources/main.cf /etc/postfix/
-COPY /sources/sasl_passwd /etc/postfix/
 COPY sources/sender_canonical /etc/postfix
-RUN postmap /etc/postfix/sasl_passwd
 RUN postmap /etc/postfix/sender_canonical
-
-# Handle file rights
-RUN chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
-RUN chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
-RUN chown -R root:root /etc/postfix/
-RUN chmod -R 655 /etc/postfix/
 
 # Open SMTP port
 EXPOSE 25
