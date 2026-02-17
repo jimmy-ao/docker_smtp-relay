@@ -18,6 +18,9 @@ key=$(echo ${smtp_creds} | jq ".secret_key" | tr -d '"')
 
 echo "${relay} $username:$key" > $config_file
 
+postmap /etc/postfix/sasl_passwd
+chmod 600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+
 log "Ending docker-smtp-relay"
 
 exec "$@"
