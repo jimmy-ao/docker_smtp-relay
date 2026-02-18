@@ -13,8 +13,8 @@ log "Copying credential informations in file"
 
 # Append configuration with smtp token
 relay="[email-smtp.eu-north-1.amazonaws.com]:587"
-username=$(echo ${smtp_creds} | jq ".SMTP user name" | tr -d '"')
-key=$(echo ${smtp_creds} | jq ".SMTP password" | tr -d '"')
+username=$(echo ${smtp_creds} | jq -r '.["SMTP user name"]')
+key=$(echo ${smtp_creds} | jq '.["SMTP password"]')
 
 echo "${relay} $username:$key" > $config_file
 
